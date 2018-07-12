@@ -3,40 +3,43 @@ import ReactDOM from 'react-dom';
 import {HashRouter} from "react-router-dom";
 import Route from "react-router-dom/es/Route";
 import Switch from "react-router-dom/es/Switch";
+import TodoList from './list.jsx'
 import './../main.scss';
 
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	class NotFound extends React.Component {
 
-		render() {
+		class NotFound extends React.Component {
 
-			return (
+			render() {
 
-				<div>
-					<h1>404</h1>
-				</div>
+				return (
 
-			);
+					<div>
+						<h1>404</h1>
+					</div>
+
+				);
+			}
 		}
-	}
 
-	class App extends React.Component {
+		class App extends React.Component {
 
-		render() {
+			render() {
 
-			return (<HashRouter>
-				<Switch>
-
-					<Route component={NotFound}/>
-				</Switch>
-			</HashRouter>)
+				return (<HashRouter>
+					<Switch>
+						<Route exact path='/' component={TodoList}/>
+						<Route component={NotFound}/>
+					</Switch>
+				</HashRouter>)
+			}
 		}
-	}
 
-	ReactDOM.render(<App/>, document.getElementById('app'));
-});
+		ReactDOM.render(<App/>, document.getElementById('app'));
+	});
+
 
 
 
