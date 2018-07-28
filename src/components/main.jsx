@@ -8,8 +8,7 @@ class Main extends React.Component {
 		super(props);
 
 		this.state = {
-			text: '',
-			tasks: [],
+			text: '', tasks: [],
 		};
 	}
 
@@ -19,29 +18,25 @@ class Main extends React.Component {
 		})
 	};
 
-	onClick = e => {
+	handleClick = e => {
 		e.preventDefault();
 		this.setState({
-			term: '',
-			items: [...this.state.text, this.state.tasks]
+			text: '', tasks: [...this.state.text, this.state.tasks]
 		});
 	};
 
-
-
 	render() {
-		return (
-			<section>
+		return (<section>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-primary col-md-12">
 				<div className='container'>
-				<button className="navbar-toggler navbar-toggler-right" type="button"
-				        data-toggle="collapse"
-				        data-target="#navbarTogglerDemo03"
-				        aria-controls="navbarTogglerDemo03" aria-expanded="false"
-				        aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"/>
-				</button>
-				<a className="navbar-brand" href="">ToDoApp</a>
+					<button className="navbar-toggler navbar-toggler-right" type="button"
+					        data-toggle="collapse"
+					        data-target="#navbarTogglerDemo03"
+					        aria-controls="navbarTogglerDemo03" aria-expanded="false"
+					        aria-label="Toggle navigation">
+						<span className="navbar-toggler-icon"/>
+					</button>
+					<a className="navbar-brand" href="">ToDoApp</a>
 
 					<ul className="navbar-nav mr-auto mt-2 mt-md-0">
 						<li className="nav-item active">
@@ -65,17 +60,21 @@ class Main extends React.Component {
 					<div
 						className='mainContainer row align-content-center justify-content-center align-self-center'>
 						<div className='back'>
-							<div className="input-group mb-3 section row justify-content-center col-md-12">
-								<input type="text" value={this.state.text} onChange={this.handleChange} className="form-control col-md-7"
+							<div
+								className="input-group mb-3 section row justify-content-center col-md-12">
+								<input type="text" value={this.state.text}
+								       onChange={this.handleChange}
+								       className="form-control col-md-7"
 								       placeholder="Enter task" aria-label="Recipient's username"
 								       aria-describedby="basic-addon2"/>
 								<select className="custom-select col-md-2">
-									<option selected="">P</option>
+									<option select="">P</option>
 									<option value="1">O</option>
 									<option value="2">T</option>
 									<option value="3">T</option>
 								</select>
-								<a href="" onClick={this.onClick} className="btn btn-shadow btn-primary col-md-3">Add task</a>
+								<a href="" onClick={this.handleClick}
+								   className="btn btn-shadow btn-primary col-md-3">Add task</a>
 							</div>
 							<div className='row justify-content-center'>
 								<table className="table table-hover table-primary col-md-12">
@@ -87,11 +86,7 @@ class Main extends React.Component {
 										<th>Username</th>
 									</tr>
 									</thead>
-									<tbody>
-
-										<ToDoList tasks={this.state.tasks} />
-
-									</tbody>
+									<ToDoList tasks={this.state.tasks}/>
 								</table>
 							</div>
 						</div>
@@ -103,4 +98,5 @@ class Main extends React.Component {
 		</section>);
 	}
 }
+
 export default Main;

@@ -3,7 +3,7 @@ import HashRouter from "react-router-dom/es/HashRouter";
 import Route from "react-router-dom/es/Route";
 import Switch from "react-router-dom/es/Switch";
 import Main from './components/main.jsx';
-import './App.scss';
+import './App.css';
 
 class NotFound extends Component {
 
