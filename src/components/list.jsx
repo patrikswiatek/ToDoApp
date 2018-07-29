@@ -1,31 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-class List extends React.Component {
+toDoTask = (props) => {
+	const text = (<div>{props.tasks.map(task => <td>{task.text}</td>)})}</div>);
 
-	render() {
-		const list = this.props.tasks.map(task => <td key={task.id}>{task}</td>);
-		return {list}
-	}
-}
-List.propTypes = {
-	tasks: PropTypes.string
-};
+	const textsList = props.tasks.map(task => <th key={task.id} scope="row">{task.id}</th>);
 
-
-class ToDoList extends React.Component {
-	render() {
 		return (
 			<tr>
-			<th scope="row">i</th>
-			<List />
-			<td/>
-			<td/>
-		</tr>);
-	}
-}
+				{textsList}
+				{text}
+				<td/>
+				<td/>
+			</tr>);
+	};
 
-export default ToDoList;
+toDoTask.proTotypes = {
+	task: PropTypes.string
+};
+
+export default toDoTask;
 
 
 

@@ -128,6 +128,16 @@ module.exports = {
         ],
         include: paths.appSrc,
       },
+	  {
+	  	test: /\.sass$/,
+		 include: paths.appSrc,
+		 loaders: ["style", "css", "sass"]
+	  },
+	    {
+		    test: /\.scss$/,
+		    include: paths.appSrc,
+		    loaders: ["style", "css", "sass"]
+	    },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
@@ -143,11 +153,6 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
-	        {
-		        test: /\.scss$/,
-		        include: paths.appSrc,
-		        loaders: ["style", "css", "sass"]
-	        },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
@@ -227,7 +232,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.scss$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.scss$/, /\.sass$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
