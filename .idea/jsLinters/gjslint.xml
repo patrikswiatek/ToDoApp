@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JSClosureLinterConfiguration">
+    <config-file>$USER_HOME$/Programming/styleguide-gh-pages/styleguide.xsl</config-file>
+  </component>
+</project>
