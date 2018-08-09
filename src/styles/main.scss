@@ -1,0 +1,83 @@
+section {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 20;
+  opacity: .7;
+  background: rgba(48, 47, 68, 0.58);
+  padding: 5%;
+  margin-top: 15%;
+  border-radius: 15px;
+  border: 1px solid rgba(32, 31, 47, 0.91);
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.item {
+  margin-bottom: 2%;
+  padding-left: 3%;
+  display: flex;
+  align-self: flex-start;
+}
+
+.btn-delete {
+  margin-left: 2%;
+  width: 100%;
+}
+
+.btn-add {
+  margin: 0 0 3% 0;
+  width: 50vw;
+  position: relative;
+}
+
+.alert-primary {
+  flex-direction: column;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+}

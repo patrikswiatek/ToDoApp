@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        <div>
+        <div className='container'>
           <Switch>
             <Route exact path="/" component={Main} />
             <Route component={NotFound} />
